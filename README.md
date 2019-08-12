@@ -1,1 +1,1 @@
-# memory_match2
+Simple Memory Match game written in Javascript(jQuery), Bootstrap 4, HTML & CSS.
