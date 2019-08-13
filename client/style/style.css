@@ -32,3 +32,12 @@ main {
     position: relative;
     vertical-align: top;
 }
+.card {
+    height: 100%;
+    width: 22%;
+}
+.cardBack {
+    background-image: url('./images/portal.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
