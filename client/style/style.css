@@ -32,3 +32,17 @@ main {
     position: relative;
     vertical-align: top;
 }
+.row {
+    margin-bottom: 3%;
+    margin-top: 1.5%;
+}
+.card {
+    height: 100%;
+    width: 16%;
+}
+#cardBack {
+    background-image: url('./images/portal.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+}
