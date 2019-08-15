@@ -73,8 +73,6 @@ img {
 .card-front {
     height: 100%;
     width: 100%;    
-    transform: rotateY(180deg);
-    text-align: center;
 }
 
 .card-front > img {
