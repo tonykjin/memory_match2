@@ -35,17 +35,9 @@ class Cards {
             }
             i++;
         }
-        this.applyClickHandlers();
     }
     renderRows = ( index ) => {
         let row = $('<div></div>').addClass('row h-25').attr('id', `row-${index}`);
         $('#main').append(row);
-    }
-    applyClickHandlers = () => {
-        $('.card-inner').on('click', this.handleClick);
-    }
-    handleClick = ( event ) => {
-        console.log(event);
-        $(event.currentTarget).css('transform', 'rotateY(180deg)');
     }
 }
