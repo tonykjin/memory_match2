@@ -24,7 +24,7 @@ class Cards {
                 let cardInner = $('<div></div>').addClass('card-inner');
                 let cardFront = $('<div></div>').addClass('card-front');
                 let cardBack = $('<div></div>').addClass('card-back');
-                let frontImage = $('<img>').attr('src', `${basePath}/${shuffledArr[cards]}`)
+                let frontImage = $('<img>').attr('src', `${basePath}/${shuffledArr[cards]}`);
                 let backImage = $('<img>').attr('src', `${basePath}/portal.png`);
                 $(cardBack).append(backImage);
                 $(cardFront).append(frontImage);

@@ -15,7 +15,8 @@ class Logic {
         $('.card-inner').off('click', this.handleClick);
     }
     handleClick = ( event ) => {
-        $(event.currentTarget).css('transform', 'rotateY(180deg)');
+        console.log(event.target);
+        $(event.currentTarget).toggleClass('flipped');
         if (this.clickCounter === 0) {
             this.firstCardClicked = $(event.currentTarget);
             this.firstCardImage = $(event.currentTarget).children()[1].firstChild.src;
@@ -35,11 +36,14 @@ class Logic {
             this.matches++;
             console.log('cards match!', this.matches);
         } else {
-            $(this.firstCardClicked).css('transform', 'rotateY(180deg)');
-            $(this.secondCardClicked).css('transform', 'rotateY(180deg)');
+            $(this.firstCardClicked).toggleClass('flipped');
+            $(this.secondCardClicked).toggleClass('flipped');
             console.log('cards do not match', this.matches);
         }
         this.accuracy = this.calcAccuracy();
+        if (this.matches === 8) {
+
+        }
         console.log(this.accuracy);
         this.applyClickHandlers();
     }
