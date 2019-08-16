@@ -15,30 +15,33 @@ class Cards {
     }
     renderCards = ( shuffledArr ) => {
         let basePath = './style/images';
-        let i = 1;
-        let cards = 0;
-        while (i <= 3) {
-            this.renderRows(i);
-            while (cards < shuffledArr.length) {
+        let i = 0;
+        while (i < 3) {
+            let row = this.createRow();
+            let cards = 0;
+            let index = 0;
+            while (cards <= 6) {
                 let card = $('<div></div>').addClass('card');
                 let cardInner = $('<div></div>').addClass('card-inner');
                 let cardFront = $('<div></div>').addClass('card-front');
                 let cardBack = $('<div></div>').addClass('card-back');
-                let frontImage = $('<img>').attr('src', `${basePath}/${shuffledArr[cards]}`);
+                let frontImage = $('<img>').attr('src', `${basePath}/${shuffledArr[index]}`);
                 let backImage = $('<img>').attr('src', `${basePath}/portal.png`);
                 $(cardBack).append(backImage);
                 $(cardFront).append(frontImage);
-                $(`#row-${i}`).append(card);
                 $(card).append(cardInner);
                 $(cardInner).append(cardBack);
                 $(cardInner).append(cardFront);
+                $(row).append(card);
+                $('#main').append(row);
                 cards++;
+                index++;
             }
             i++;
         }
     }
-    renderRows = ( index ) => {
-        let row = $('<div></div>').addClass('row h-25').attr('id', `row-${index}`);
-        $('#main').append(row);
+    createRow = () => {
+        let row = $('<div></div>').addClass('row h-25');
+        return row;
     }
 }
