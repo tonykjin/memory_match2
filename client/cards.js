@@ -16,11 +16,11 @@ class Cards {
     renderCards = ( shuffledArr ) => {
         let basePath = './style/images';
         let i = 0;
+        let index = 0;
         while (i < 3) {
             let row = this.createRow();
             let cards = 0;
-            let index = 0;
-            while (cards <= 6) {
+            while (cards < 6) {
                 let card = $('<div></div>').addClass('card');
                 let cardInner = $('<div></div>').addClass('card-inner');
                 let cardFront = $('<div></div>').addClass('card-front');
