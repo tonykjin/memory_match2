@@ -32,6 +32,7 @@ main {
     height: 85%;
     position: relative;
     vertical-align: top;
+    left: 15%;
 }
 img {
     object-fit: contain;
