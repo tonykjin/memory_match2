@@ -11,15 +11,15 @@ class Cards {
             arr[currentIndex] = arr[randomIndex];
             arr[randomIndex] = temporaryValue;
         }
-        console.log(arr);
         return arr;
     }
     renderCards = ( shuffledArr ) => {
         let basePath = './style/images';
         let i = 1;
+        let cards = 0;
         while (i <= 3) {
             this.renderRows(i);
-            for (let cards = 0; cards < shuffledArr.length; cards++) {
+            while (cards < shuffledArr.length) {
                 let card = $('<div></div>').addClass('card');
                 let cardInner = $('<div></div>').addClass('card-inner');
                 let cardFront = $('<div></div>').addClass('card-front');
@@ -32,6 +32,7 @@ class Cards {
                 $(card).append(cardInner);
                 $(cardInner).append(cardBack);
                 $(cardInner).append(cardFront);
+                cards++;
             }
             i++;
         }
