@@ -27,16 +27,18 @@ class Logic {
             return;
         }
         if (this.clickCounter === 0) {
-            this.firstCardClicked = $(event.currentTarget);
+            this.firstCardClicked = event.currentTarget.firstChild.firstChild;
             this.firstCardImage = $(event.currentTarget).children()[1].firstChild.src;
             this.clickCounter = 1;
-            $(event.currentTarget).addClass('flipped');
+            event.currentTarget.firstChild.firstChild.className = 'dynamic';
+            event.currentTarget.firstChild.firstChild.className = 'dynamic disappear';
         } else if (this.clickCounter > 0){
             this.notClickable = true;
             this.removeAllClickHandlers();
-            this.secondCardClicked = $(event.currentTarget);
+            this.secondCardClicked = event.currentTarget.firstChild.firstChild;
             this.secondCardImage = $(event.currentTarget).children()[1].firstChild.src;
-            $(event.currentTarget).addClass('flipped');
+            event.currentTarget.firstChild.firstChild.className = 'dynamic';
+            event.currentTarget.firstChild.firstChild.className = 'dynamic disappear';
             this.attempts++;
             this.clickCounter = 0;
             this.testIfMatch();
@@ -49,13 +51,12 @@ class Logic {
             this.removeMatchedClickHandlers(this.matchedCards);
             this.applyClickHandlers();
             this.notClickable = false;
-            console.log(this.matches);
         } else {
             setTimeout(() => {
-                $(this.firstCardClicked).toggleClass('flipped');
-                $(this.secondCardClicked).toggleClass('flipped');
+                this.firstCardClicked.className = 'static reappear';
+                this.secondCardClicked.className = 'static reappear';
                 this.notClickable = false;
-            }, 1500);
+            }, 2000);
             this.applyClickHandlers();
         }
         this.accuracy = this.calcAccuracy();
