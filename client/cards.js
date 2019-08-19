@@ -25,8 +25,8 @@ class Cards {
                 let cardInner = $('<div></div>').addClass('card-inner');
                 let cardFront = $('<div></div>').addClass('card-front');
                 let cardBack = $('<div></div>').addClass('card-back');
-                let frontImage = $('<img>').attr('src', `${basePath}/${shuffledArr[index]}`);
-                let backImage = $('<img>').attr('src', `${basePath}/portal.png`);
+                let frontImage = $('<img>').attr('src', `${basePath}/${shuffledArr[index]}`).addClass('front-image');
+                let backImage = $('<img>').addClass('static');
                 $(cardBack).append(backImage);
                 $(cardFront).append(frontImage);
                 $(card).append(cardInner);
@@ -43,5 +43,5 @@ class Cards {
     createRow = () => {
         let row = $('<div></div>').addClass('row h-25');
         return row;
-    }
+    }   
 }

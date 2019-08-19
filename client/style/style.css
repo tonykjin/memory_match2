@@ -1,43 +1,37 @@
 body {
     display: block;
     position: static;
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     background-image: url('./images/earth.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 header {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 1.8em;
     color: blue;
-    width: 100%;
-    height: 25%;
+    width: 800px;
+    height: 100px;
     text-align: center;
     border: 1px black;
     margin: 0 0 0;
 }
-aside {
-    display: inline-block;
-    position: relative;
-    height: 75%;
-    width: 15%;
-    opacity: .6;
-    background-color: grey;
-    text-align: center;
-    font-size: 1.4em;
-    color: black;
-    border: 2px black;
-}
+
 main {
     display: inline-block;
-    width: 84%;
-    height: 85%;
     position: relative;
     vertical-align: top;
-    left: 15%;
+    left: 150px;
+    top: -30px;
 }
 img {
     object-fit: contain;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 100px;
+    max-height: 100px;
+    height: 100%;
+    width: 100%;
 }
 .row {
     margin-bottom: 3%;
@@ -46,8 +40,8 @@ img {
 }
 .card {
     background-color: transparent;
-    height: 100%;
-    width: 16%;
+    height: 100px;
+    width: 100px;
     border: none;
 }
 .card-inner {
@@ -55,25 +49,40 @@ img {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
 }
-
+.front-image {
+    position: relative;
+    z-index: -1;
+}
 .card-front, .card-back {
     top: 0;
     position: absolute;
-    max-width: 100%;
-    max-height: 100%;
-    width: 100%;
-    height: 100%;
+    width: 100px;
+    height: 100px;
     backface-visibility: hidden;
 }
 
-.card-back {
-    transform: rotateY(180deg);
+.disappear {
+    transition: all 2s ease-in-out;
+    transform: scale(0);
 }
 
-.flipped {
-    transform: rotateY(0deg);
+.reappear {
+    transition: all 2s ease-in-out;
+    transform: scale(1);
+}
+.static {
+    background-image: url('./images/portal.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+}
+
+.dynamic {
+    background-image: url('./images/portal.webp');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
 }
