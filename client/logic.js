@@ -15,9 +15,6 @@ class Logic {
     applyClickHandlers = () => {
         $('.card-inner').on('click', this.handleClick);
     }
-    // removeAllClickHandlers = () => {
-    //     $('.card').off();
-    // }
     removeMatchedClickHandlers = ( matches ) => {
         matches.map(element => {
             $(element).css('pointer-events', 'none');
@@ -26,7 +23,7 @@ class Logic {
     handleClick = ( event ) => {
         if (this.notClickable) {
             return;
-        }
+        };
         if (this.clickCounter === 0) {
             this.firstCardClicked = event.currentTarget;
             this.firstCard = $(event.currentTarget);
@@ -37,7 +34,6 @@ class Logic {
             this.firstCard.css('pointer-events', 'none');
         } else if (this.clickCounter > 0){
             this.notClickable = true;
-            // this.removeAllClickHandlers();
             this.secondCardClicked = event.currentTarget;
             this.secondCardImage = $(event.currentTarget).children()[1].outerHTML;
             event.currentTarget.firstChild.className = 'card-back dynamic disappear';
@@ -52,10 +48,9 @@ class Logic {
             this.matches++;
             this.matchedCards.push(this.firstCardClicked, this.secondCardClicked);
             this.removeMatchedClickHandlers(this.matchedCards);
-            // this.applyClickHandlers();
             this.notClickable = false;
         } else {
-            this.progressHealth += 5;
+            this.progressHealth += 10;
             setTimeout(() => {
                 this.firstCardClicked.lastChild.className = 'card-front hidden';
                 this.secondCardClicked.lastChild.className = 'card-front hidden';
@@ -64,7 +59,6 @@ class Logic {
                 this.notClickable = false;
             }, 2000);
             this.updateProgressBar();
-            // this.applyClickHandlers();
             this.firstCard.css('pointer-events', '');
         }
         this.accuracy = this.calcAccuracy();
@@ -78,28 +72,23 @@ class Logic {
         );
     }
     updateProgressBar = () => {
-        $(".progress")
-        .removeClass('hidden')
-        .addClass('bg-success')
-        .attr('aria-valuenow', this.progressHealth);
-        $('.progress').animate({
-            'width': this.progressHealth + '%'
-        }, 2000);
-        if (this.progressHealth < 10) {
-            $(".progress")
-            .removeClass('bg-success')
-            .addClass('bg-info');
-        } else if (this.progressHealth <= 20) {
-            $(".progress")
-            .removeClass('bg-info')
-            .addClass('bg-warning');
-        } else if (this.progressHealth <= 35) {
-            $(".progress")
-            .removeClass('bg-warning')
-            .addClass('bg-danger');
-        }
+        $('.progress-bar')
+        .css('width', this.progressHealth + '%');
+        // if (this.progressHealth < 20) {
+        //     $(".progress")
+        //     .removeClass('bg-success')
+        //     .addClass('bg-info');
+        // } else if (this.progressHealth <= 40) {
+        //     $(".progress")
+        //     .removeClass('bg-info')
+        //     .addClass('bg-warning');
+        // } else {
+        //     $(".progress")
+        //     .removeClass('bg-warning')
+        //     .addClass('bg-danger');
+        // }
         console.log(this.progressHealth);
-        if (this.progressHealth === 50) {  
+        if (this.progressHealth === 100) {
             $('#lose-modal').modal('show');
         }
     }
