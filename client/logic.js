@@ -5,7 +5,7 @@ class Logic {
         this.matches = 0;
         this.clickCounter = 0;
         this.gameTrack = 0;
-        this.progressHealth = 0;
+        this.regress = 0;
         this.misses = 0;
         this.accuracy = 0;
         this.matchedCards = [];
@@ -50,7 +50,7 @@ class Logic {
             this.removeMatchedClickHandlers(this.matchedCards);
             this.notClickable = false;
         } else {
-            this.progressHealth += 10;
+            this.regress += 10;
             setTimeout(() => {
                 this.firstCardClicked.lastChild.className = 'card-front hidden';
                 this.secondCardClicked.lastChild.className = 'card-front hidden';
@@ -72,23 +72,16 @@ class Logic {
         );
     }
     updateProgressBar = () => {
-        $('.progress-bar')
-        .css('width', this.progressHealth + '%');
-        // if (this.progressHealth < 20) {
-        //     $(".progress")
-        //     .removeClass('bg-success')
-        //     .addClass('bg-info');
-        // } else if (this.progressHealth <= 40) {
-        //     $(".progress")
-        //     .removeClass('bg-info')
-        //     .addClass('bg-warning');
-        // } else {
-        //     $(".progress")
-        //     .removeClass('bg-warning')
-        //     .addClass('bg-danger');
-        // }
-        console.log(this.progressHealth);
-        if (this.progressHealth === 100) {
+        let progress = $('.progress-bar');
+        progress.css('width', this.regress + '%');
+        if (this.regress <= 40) {
+            progress.css('background-color', '#5C8789');
+        } else if (this.regress <= 60) {
+            progress.css('background-color', '#cad420');
+        } else {
+            progress.css('background-color', '#d20505');
+        }
+        if (this.regress === 100) {
             $('#lose-modal').modal('show');
         }
     }
