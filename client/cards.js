@@ -23,12 +23,8 @@ class Cards {
             while (cards < 6) {
                 let card = $('<div></div>').addClass('card');
                 let cardInner = $('<div></div>').addClass('card-inner');
-                let cardFront = $('<div></div>').addClass('card-front');
-                let cardBack = $('<div></div>').addClass('card-back');
-                let frontImage = $('<img>').attr('src', `${basePath}/${shuffledArr[index]}`).addClass('front-image');
-                let backImage = $('<img>').addClass('static');
-                $(cardBack).append(backImage);
-                $(cardFront).append(frontImage);
+                let cardFront = $('<div></div>').addClass('card-front hidden').css({'background-image': `url("${basePath}/${shuffledArr[index]}")`});
+                let cardBack = $('<div></div>').addClass('card-back static');
                 $(card).append(cardInner);
                 $(cardInner).append(cardBack);
                 $(cardInner).append(cardFront);
