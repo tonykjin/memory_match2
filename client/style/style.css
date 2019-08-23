@@ -9,15 +9,12 @@ body {
     background-size: cover;
 }
 aside {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: white;
     display: inline-block;
     position: absolute;
     width: 13%;
     height: 100%;
     background-image: url('./images/aside_bg.png');
     padding: 15px;
-    padding-top: 40px;
 }
 main {
     display: inline-block;
@@ -51,6 +48,7 @@ main {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    transition: transform 2s ease-in-out;
 }
 
 .card-front {
@@ -58,7 +56,6 @@ main {
 }
 
 .disappear {
-    transition: transform 2s ease-in-out;
     transform: scale(0.0);
 }
 
@@ -115,20 +112,22 @@ main {
     display: none;
 }
 
-.morty {
+.happy {
+    background-image: url('./images/happy_morty.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     height: 75px;
-    width: 75px;
-    padding-bottom: 50px; 
-}
-.happy {
-    background-image: url('./images/happy_morty.png'); 
+    width: 75px;    
 }
 
 .angry {
-    background-image: url('./images/angry_morty.png');  
+    background-image: url('./images/angry_morty.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 75px;
+    width: 75px;    
 }
 .reset-button {
 	box-shadow: inset 0px 1px 3px 0px #91b8b3;
@@ -142,7 +141,7 @@ main {
 	font-family: Arial;
 	font-size: 15px;
 	font-weight: bold;
-	padding: 11px;
+	padding: 11px 23px;
 	text-shadow: 0px -1px 0px #2b665e;
 }
 .reset-button:hover {
@@ -152,8 +151,4 @@ main {
 .reset-button:active {
 	position:relative;
 	top:1px;
-}
-
-aside > * {
-    padding-bottom: 10px;
 }
