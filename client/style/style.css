@@ -21,8 +21,9 @@ main {
     display: inline-block;
     position: relative;
     vertical-align: top;
-    left: 110px;
+    left: 50px;
     top: -10px;
+    width: 75%;
 }
 .row {
     margin-bottom: 3%;
@@ -31,8 +32,8 @@ main {
 }
 .card {
     background-color: transparent;
-    height: 120px;
-    width: 120px;
+    height: 100px;
+    width: 100px;
     border: none;
 }
 .card-inner {
@@ -172,7 +173,7 @@ aside > * {
     }
     main {
         height: 85%;
-        width: 86%;
+        width: 80%;
         left: 40px;
         top: 40px;
     }
