@@ -11,6 +11,7 @@ class Logic {
         this.matchedCards = [];
         this.notClickable = false;
         this.maxMatches = 9;
+        this.attempts = 0;
     }
     applyClickHandlers = () => {
         $('.card-inner').on('click', this.handleClick);
@@ -61,7 +62,12 @@ class Logic {
             this.updateProgressBar();
             this.firstCard.css('pointer-events', '');
         }
+        console.log('matches:', this.matches);
+        console.log('attempts:', this.attempts);
         this.accuracy = this.calcAccuracy();
+        console.log(this.accuracy);
+        this.updatePanel();
+        this.morty();
         if (this.matches === this.maxMatches) {
             $('#win-modal').modal('show');
         }
@@ -84,5 +90,20 @@ class Logic {
         if (this.regress === 100) {
             $('#lose-modal').modal('show');
         }
+    }
+    morty = () => {
+        if (this.accuracy <= 50) {
+            $('.morty')
+            .addClass('.angry')
+            .removeClass('.happy');
+        } else if (this.accuracy > 50) {
+            $('.morty')
+            .addClass('.happy')
+            .removeClass('.angry');
+        }
+    }
+    updatePanel = () => {
+        $('.accuracy-value').text(this.accuracy + '%');
+        $('.matches-value').text(this.matches);
     }
  }
