@@ -31,14 +31,14 @@ class Logic {
             this.firstCardImage = $(event.currentTarget).children()[1].outerHTML;
             this.clickCounter = 1;
             event.currentTarget.firstChild.className = 'card-back dynamic disappear';
-            event.currentTarget.lastChild.className = 'card-front reappear';
+            event.currentTarget.lastChild.className = 'card-front';
             this.firstCard.css('pointer-events', 'none');
         } else if (this.clickCounter > 0){
             this.notClickable = true;
             this.secondCardClicked = event.currentTarget;
             this.secondCardImage = $(event.currentTarget).children()[1].outerHTML;
             event.currentTarget.firstChild.className = 'card-back dynamic disappear';
-            event.currentTarget.lastChild.className = 'card-front reappear';
+            event.currentTarget.lastChild.className = 'card-front';
             this.attempts++;
             this.clickCounter = 0;
             this.testIfMatch();
@@ -53,8 +53,8 @@ class Logic {
         } else {
             this.regress += 10;
             setTimeout(() => {
-                this.firstCardClicked.firstChild.className = 'card-back static reappear';
-                this.secondCardClicked.firstChild.className = 'card-back static reappear';
+                this.firstCardClicked.firstChild.className = 'card-back static';
+                this.secondCardClicked.firstChild.className = 'card-back static';
                 this.notClickable = false;
                 setTimeout( () => {
                     this.firstCardClicked.lastChild.className = 'card-front hidden';

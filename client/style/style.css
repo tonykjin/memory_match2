@@ -15,6 +15,7 @@ aside {
     height: 100%;
     background-image: url('./images/aside_bg.png');
     padding: 15px;
+    padding-top: 30px;
 }
 main {
     display: inline-block;
@@ -57,10 +58,6 @@ main {
 
 .disappear {
     transform: scale(0.0);
-}
-
-.reappear {
-    transform: scale(1.0);
 }
 
 .static {
@@ -141,7 +138,7 @@ main {
 	font-family: Arial;
 	font-size: 15px;
 	font-weight: bold;
-	padding: 11px 23px;
+	padding: 11px;
 	text-shadow: 0px -1px 0px #2b665e;
 }
 .reset-button:hover {
@@ -151,4 +148,8 @@ main {
 .reset-button:active {
 	position:relative;
 	top:1px;
+}
+
+aside > * {
+    margin-bottom: 15px;
 }
