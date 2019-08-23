@@ -74,7 +74,7 @@ class Logic {
     }
     calcAccuracy = () => {
         return (
-            ((this.matches)/(this.attempts)) * 100
+            (((this.matches)/(this.attempts)) * 100).toFixed(1)
         );
     }
     updateProgressBar = () => {
