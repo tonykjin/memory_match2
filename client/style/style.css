@@ -10,7 +10,7 @@ body {
 }
 aside {
     display: inline-block;
-    position: absolute;
+    position: relative;
     width: 13%;
     height: 100%;
     background-image: url('./images/aside_bg.png');
@@ -78,9 +78,6 @@ main {
     height: 40px;
     max-width: 400px;
 }
-.bg-custom {
-    background-image: url('./images/README.jpg');
-}
 
 .progress-container {
     width: 50%;
@@ -124,7 +121,7 @@ main {
     background-repeat: no-repeat;
     background-size: contain;
     height: 75px;
-    width: 75px;    
+    width: 75px; 
 }
 .reset-button {
 	box-shadow: inset 0px 1px 3px 0px #91b8b3;
@@ -152,4 +149,35 @@ main {
 
 aside > * {
     margin-bottom: 15px;
+}
+
+
+@media only screen 
+  and (min-device-width: 1200px) {
+    html {
+        height: 100vh;
+        width: 100vw;
+    }
+    aside {
+        height: 85%;
+        padding: 30px;
+        font-size: 1.4em;
+        padding-top: 100px;
+    }
+    aside > * {
+        margin-bottom: 30px;
+    }
+    .progress-container {
+        width: 24%;
+    }
+    main {
+        height: 85%;
+        width: 86%;
+        left: 40px;
+        top: 40px;
+    }
+    .card {
+        height: 100%;
+        width: 16%;
+    }
 }
