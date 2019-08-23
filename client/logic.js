@@ -53,11 +53,13 @@ class Logic {
         } else {
             this.regress += 10;
             setTimeout(() => {
-                this.firstCardClicked.lastChild.className = 'card-front hidden';
-                this.secondCardClicked.lastChild.className = 'card-front hidden';
                 this.firstCardClicked.firstChild.className = 'card-back static reappear';
                 this.secondCardClicked.firstChild.className = 'card-back static reappear';
                 this.notClickable = false;
+                setTimeout( () => {
+                    this.firstCardClicked.lastChild.className = 'card-front hidden';
+                    this.secondCardClicked.lastChild.className = 'card-front hidden';
+                }, 1500);
             }, 2000);
             this.updateProgressBar();
             this.firstCard.css('pointer-events', '');
