@@ -59,8 +59,8 @@ class Logic {
                     this.firstCardClicked.lastChild.className = 'card-front hidden';
                     this.secondCardClicked.lastChild.className = 'card-front hidden';
                     this.notClickable = false;
-                }, 2000);
-            }, 2500);
+                }, 1500);
+            }, 2000);
             this.updateProgressBar();
             this.firstCard.css('pointer-events', '');
         }
