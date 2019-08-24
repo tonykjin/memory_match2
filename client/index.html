@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>
+            MEMORY MATCH
+        </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style/style.css">
+        <script src='./cards.js'></script>
+        <script src='./logic.js'></script>
+        <script src="./main.js"></script>
+    </head>
+    <body>
+        <header class="d-flex justify-content-center align-items-center"> 
+            <div class="drunk-rick"></div>
+            <div class='progress-container'>
+                <div class="progress bg-transparent">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0"
+                    aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                </div>
+            </div>
+            </div>
+            <div class="neutrino-bomb"></div>
+        </header>
+        <aside>
+            <div class="morty happy"></div>
+            <div class="accuracy-text">Accuracy</div>
+            <div class="accuracy-value">0</div>
+            <div class="matches-text">Matches</div>
+            <div class="matches-value">0</div>
+            <a href="#" class="reset-button" onclick="window.location.reload('false')">Reset</a>
+        </aside>
+        <main>
+            <div class="container h-100 w-100" id="main"></div>
+        </main>
+
+        <div class="modal fade" id="win-modal" tabindex="-1" role="dialog" aria-labelledby="win-modal-title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="win-modal-title">Congratulations! You saved dimension c-137!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                        <div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/liBsVeLILcyaY" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/adultswim-liBsVeLILcyaY"></a></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="window.location.reload('false')">Play Again</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="lose-modal" tabindex="-1" role="dialog" aria-labelledby="lose-modal-title" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="lose-modal-title">You have failed to save Earth dimension c-137</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                            <iframe src="https://giphy.com/embed/3oEhmVQaCjPOJJQgG4" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/adultswim-rick-and-morty-pickle-3oEhmVQaCjPOJJQgG4"></a></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="window.location.reload('false')">Try Again</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        <div class="modal fade" id="portrait-modal" tabindex="-1" role="dialog" aria-labelledby="portrait-modal-title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="portrait-modal-title">This application is best viewed in landscape!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                        Please orient your device to landscape
+                </div>
+                <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="window.location.reload('false')">reload page</button>
+                </div>
+                </div>
+            </div>
+            </div>
+    </body>
+</html>
+
