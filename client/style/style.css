@@ -188,7 +188,8 @@ aside > * {
 }
 
 @media only screen
-    and (max-device-width: 1024px) {
+    and (max-device-width: 1024px)
+    and (min-device-width: 680px) {
         html {
             height: 100vh;
             width: 100vw;
@@ -221,4 +222,29 @@ aside > * {
             width: 130px;
         }
     }
-    
+
+@media only screen
+    and (max-device-width: 669px) {
+        header {
+            padding-bottom: 10px;
+        }
+        main {
+            top: 20px;
+            width: 520px;;
+            height: 325px;
+        }
+        .card {
+            height: 80px;
+            width: 80px;
+        }
+        .card-front, .card-back {
+            height: 80px;
+            width: 80px;
+        }
+        .row {
+            padding-bottom: 15px;
+        }
+        aside {
+            height: 60%;
+        }
+    }
