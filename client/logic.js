@@ -38,7 +38,7 @@ class Logic {
             this.secondCardClicked = event.currentTarget;
             this.secondCardImage = $(event.currentTarget).children()[1].outerHTML;
             event.currentTarget.firstChild.className = 'card-back dynamic disappear';
-            event.currentTarget.lastChild.className = 'card-front';
+            event.currentTarget.lastChild.className = 'card-front'; 
             this.attempts++;
             this.clickCounter = 0;
             this.testIfMatch();
